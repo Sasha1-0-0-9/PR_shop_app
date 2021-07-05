@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TheBestApp</string>
+    <string name="sales_ico">Sales</string>
+    <string name="contacts_text">Contacts</string>
+    <string name="main_text">Main activity</string>
+    <string name="about_text">About us</string>
+    <string name="logo_1">ProjectRed</string>
+    <string name="logo_2">Shop</string>
+</resources>
