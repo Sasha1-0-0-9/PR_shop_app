@@ -7,15 +7,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.example.thebestapp.adapter.CategoryAdapter;
+import com.example.thebestapp.adapter.CourseAdapter;
 import com.example.thebestapp.model.Category;
+import com.example.thebestapp.model.Course;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView categoryRecycler;
+    RecyclerView categoryRecycler, courseRecycler;
     CategoryAdapter categoryAdapter;
+    CourseAdapter courseAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,14 @@ public class MainActivity extends AppCompatActivity {
         categoryList.add(new Category(6, "Other"));
 
         setCategoryRecycler(categoryList);
+
+        List<Course> courseList = new ArrayList<>();
+        courseList.add(new Course(1, "java", "Java Developer", "soon", "beginner", "#424345"));
+        courseList.add(new Course(2, "py", "Python Developer", "soon", "beginner", "#9FA52D"));
+        courseList.add(new Course(3, "java", "Android Developer", "soon", "beginner", "#424345"));
+
+        setCourseRecycler(courseList);
+
     }
 
     private void setCategoryRecycler(List<Category> categoryList) {
@@ -41,5 +52,15 @@ public class MainActivity extends AppCompatActivity {
 
         categoryAdapter = new CategoryAdapter(this, categoryList);
         categoryRecycler.setAdapter(categoryAdapter);
+    }
+
+    private void setCourseRecycler(List<Course> courseList) {
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
+        courseRecycler = findViewById(R.id.courseRecycler);
+        courseRecycler.setLayoutManager(layoutManager);
+
+        courseAdapter = new CourseAdapter(this, courseList);
+        courseRecycler.setAdapter(courseAdapter);
     }
 }
