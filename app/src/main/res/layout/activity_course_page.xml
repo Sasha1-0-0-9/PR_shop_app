@@ -82,6 +82,7 @@
         android:layout_height="230dp"
         android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
+        android:transitionName="courseImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
@@ -89,7 +90,7 @@
         app:srcCompat="@drawable/ic_java" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/coursePageTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -107,6 +108,7 @@
         android:id="@+id/courseBg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:cardElevation="0dp"
         app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -128,7 +130,6 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:fontFamily="@font/montserrat"
-                    android:gravity="center"
                     android:text="@string/course_start"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
